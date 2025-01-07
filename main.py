@@ -17,8 +17,7 @@ class OllamaChat:
 
     def chat(self, prompt):
         response = requests.post(f"http://{self.ollama_server}/api/generate", json={'model':self.ollama_model, 'prompt': prompt})
-        print(response)
-
+        
         if response.status_code == 200:
             full_text = response.text
 
